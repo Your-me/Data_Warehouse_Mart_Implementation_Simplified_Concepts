@@ -26,7 +26,7 @@ Based on the BED OCCUPANCY KPI, the first DATA MART that will be built, will ans
 ## DATA WAREHOUSE IMPLEMENTATION PLANNING
 A design of the proposed Data Warehouse Design has been presented about 7 weeks ago. Containing the information on what the implementation and development would look like. After carefully observing the existing Online Transactional Processing System, in the pioneer regions: North Yorkshire and West Yorkshire. The existing available databases are showing 3 care homes per region making 6 care homes all together.
 
-<!-- ![WYR_script confirmation for loading the data store ](/Images/Fig_2.png) -->
+![WYR_script confirmation for loading the data store ](/Images/Fig_20.png)
 
 ![NYR_script confirmation  for loading the data store ](/Images/Fig_3.png)
 
