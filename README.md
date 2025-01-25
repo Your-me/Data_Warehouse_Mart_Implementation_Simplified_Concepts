@@ -26,7 +26,7 @@ Based on the BED OCCUPANCY KPI, the first DATA MART that will be built, will ans
 ## DATA WAREHOUSE IMPLEMENTATION PLANNING
 A design of the proposed Data Warehouse Design has been presented about 7 weeks ago. Containing the information on what the implementation and development would look like. After carefully observing the existing Online Transactional Processing System, in the pioneer regions: North Yorkshire and West Yorkshire. The existing available databases are showing 3 care homes per region making 6 care homes all together.
 
-![WYR_script confirmation for loading the data store ](/Images/Fig_2.png)
+<!-- ![WYR_script confirmation for loading the data store ](/Images/Fig_2.png) -->
 
 ![NYR_script confirmation  for loading the data store ](/Images/Fig_3.png)
 
@@ -86,7 +86,7 @@ As shown in the table below.
 The diagram below is using the output from the transformation.
 
 
-![NWYCCG_STAGEAREA: TRANSFORMATION ADMISSION DATREE INTO A HIERARCHIES AND CALCULATED MEASURES FOR FACT TABLE ](/images/Fig_10.png)
+![NWYCCG_STAGEAREA ](/images/Fig_10.png)
 Finally, in the transformation stage, a surrogate key was introduced to give the records a unique key. The table is called S1_NWYCCG_STAGEAREA. Just for record purposes or future use.
 
 - ## LOADING
@@ -103,7 +103,7 @@ The images of loaded Dimension tables using the above procedures, follows below;
 
 - 2.	**CARE_CENTRE_DIM**
 
-![Loaded Care_Centre_Dim from staging Arera ](/images/Fig_12.png)
+![Loaded Care_Centre_Dim ](/images/Fig_12.png)
 
 - 3.	**WARD_DIM**
 The Slowly Changing Dimension, The Stakeholders want us to track the history of this dimension. It is the historically significant dimension and the attribute being monitored over time is the WARD CAPACITY which at the moment is 20 beds per ward. SCD TYPE 2 is applied. The wants to keep a record of every change in the capacity at any given point in time. This type of SCD could get bigger easily because a new row is added for every in the value of the WARD CAPACITY and I used 3 flags to track it, namely “valid_from”,” valid_to”, and “current_flag” – has a default value of Y for the current capacity and N if the capacity has changed. The concept I used was to create two Scripts. One will only run at the launch of the Data Warehouse System and the Second Script will be scheduled for repeated automatic running every 30 days for now based on STAKEHOLDERS' request. For this exercise, I have a code that updated the ward capacity of the ICU ward in the second script to test if the code is working.
@@ -145,7 +145,7 @@ One important thing to take note of is that Correlation does not mean Causation,
 ![Report Generated from the Fact_table Query View in oracle apex. ](/images/Fig_19.png)
 
 # DASHBOARD PRODUCED FROM OLAP
-![SIMPLIFIED OLAP DASHBOARD FOR BED OCCUPANCY FOR NORTH AND WEST YORKSHIRE CLINIC COMMISSION GROUP ](/images/Fig_20.png)
+![SIMPLIFIED OLAP DASHBOARD ](/images/Fig_20.png)
 
 
 ## OBSERVATIONS FROM THE DASHBOARD.
