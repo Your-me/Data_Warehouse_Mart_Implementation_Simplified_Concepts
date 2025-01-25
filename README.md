@@ -1,9 +1,7 @@
 # Data_Warehouse_Mart_Implementation_Simplified_Concepts
 North and West Yorkshire Clinical Commission Group (INFORMATION SYSTEM) FICTIONAL Concept.
 
-Markdown
 
-Collapse
 # INTRODUCTION
 ## North and West Yorkshire Clinical Commission Group (INFORMATION SYSTEM) FICTIONAL concept
 North and West Yorkshire Clinical Commission Group (NWYCCG) needs an information system for managing the social and healthcare operation of medical facilities that they are controlling and they using 6 care homes from the Leeds city council for a test case to produce a system to improve elderly patients experience and provide high-quality care recovery period support. A System will be developed to measure;
@@ -86,7 +84,7 @@ As shown in the table below.
 The diagram below is using the output from the transformation.
 
 
-![NWYCCG_STAGEAREA ](/images/Fig_10.png)
+![NWYCCG_STAGEAREA ](/Images/Fig_10.png)
 Finally, in the transformation stage, a surrogate key was introduced to give the records a unique key. The table is called S1_NWYCCG_STAGEAREA. Just for record purposes or future use.
 
 - ## LOADING
@@ -103,7 +101,7 @@ The images of loaded Dimension tables using the above procedures, follows below;
 
 - 2.	**CARE_CENTRE_DIM**
 
-![Loaded Care_Centre_Dim ](/images/Fig_12.png)
+![Loaded Care_Centre_Dim ](/Images/Fig_12.png)
 
 - 3.	**WARD_DIM**
 The Slowly Changing Dimension, The Stakeholders want us to track the history of this dimension. It is the historically significant dimension and the attribute being monitored over time is the WARD CAPACITY which at the moment is 20 beds per ward. SCD TYPE 2 is applied. The wants to keep a record of every change in the capacity at any given point in time. This type of SCD could get bigger easily because a new row is added for every in the value of the WARD CAPACITY and I used 3 flags to track it, namely “valid_from”,” valid_to”, and “current_flag” – has a default value of Y for the current capacity and N if the capacity has changed. The concept I used was to create two Scripts. One will only run at the launch of the Data Warehouse System and the Second Script will be scheduled for repeated automatic running every 30 days for now based on STAKEHOLDERS' request. For this exercise, I have a code that updated the ward capacity of the ICU ward in the second script to test if the code is working.
